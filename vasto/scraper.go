@@ -1,4 +1,4 @@
-package axcelerate
+package vasto
 
 import (
 	"time"
@@ -6,7 +6,7 @@ import (
 	"github.com/chrisjoyce911/workshop-scrape/common"
 )
 
-func Scraper(org common.Job) ([]common.Location, error) {
+func ScrapeWorkshops(org common.Job) ([]common.Location, error) {
 
 	return []common.Location{
 		{

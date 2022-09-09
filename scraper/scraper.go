@@ -3,22 +3,20 @@ package scraper
 import (
 	"fmt"
 
-	"github.com/chrisjoyce911/workshop-scrape/axcelerate"
 	"github.com/chrisjoyce911/workshop-scrape/clad82"
 	"github.com/chrisjoyce911/workshop-scrape/common"
+	"github.com/chrisjoyce911/workshop-scrape/vasto"
 )
 
-func Scraper(org common.Job) ([]common.Location, error) {
+func ScrapeWorkshops(org common.Job) ([]common.Location, error) {
 
 	switch org.Scraper {
-	case "axcelerate":
-		return axcelerate.Scraper(org)
+	case "vasto":
+		return vasto.ScrapeWorkshops(org)
 	case "clad82":
-		return clad82.Scraper(org)
+		return clad82.ScrapeWorkshops(org)
 	default:
 		fmt.Println("Place fiver order for new scraper type !")
 	}
-
 	return []common.Location{}, nil
-
 }
