@@ -8,6 +8,11 @@ import (
 	"github.com/gocolly/colly"
 )
 
+// Each Traing Organization will need a scraper
+// A fiver order will be for a scraper for one of the following format types
+
+// ScrapeWorkshops collected data on workshops being run by an Traing Organization
+// Only  workshops matching the job should be returned
 func ScrapeWorkshops(job common.Job) ([]common.Location, error) {
 
 	c := colly.NewCollector()
@@ -72,6 +77,7 @@ func ScrapeWorkshops(job common.Job) ([]common.Location, error) {
 	}, nil
 }
 
+// ScrapeLocations get a list of all loactions a  Traing Organization is operating at
 func ScrapeLocations(job common.Job) ([]string, error) {
 
 	c := colly.NewCollector()
