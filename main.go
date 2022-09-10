@@ -10,6 +10,9 @@ import (
 
 func main() {
 
+	FirstAidProLocations, _ := scraper.ScrapeLocations(common.Job{URL: "https://www.firstaidpro.com.au/calendar/", Scraper: "vasto"})
+	FirstAidNoosaLocations, _ := scraper.ScrapeLocations(common.Job{URL: "https://firstaidnoosa.info/dates/", Scraper: "clad82"})
+
 	t := time.Now()
 	process := []common.Job{
 		{
@@ -18,7 +21,8 @@ func main() {
 			Scraper:  "vasto",
 			Start:    t.AddDate(0, 0, 1),
 			End:      t.AddDate(0, 0, 7),
-			CourseID: "HLTAID009",
+			CourseID: []string{"HLTAID009"},
+			Location: FirstAidProLocations,
 		},
 		{
 			Name:     "First Aid Noosa Sunshine Coast",
@@ -26,9 +30,15 @@ func main() {
 			Scraper:  "clad82",
 			Start:    t.AddDate(0, 0, 1),
 			End:      t.AddDate(0, 0, 7),
-			CourseID: "HLTAID011",
+			CourseID: []string{"HLTAID009"},
+			Location: FirstAidNoosaLocations,
 		},
 
+		// Each Traing Organization will need a scraper
+		// A fiver order will be for a scraper for one of the following format types
+
+		// https://www.firstaidpro.com.au/calendar/
+		// https://firstaidnoosa.info/dates/
 		// https://www.redcross.org.au/firstaid/courses/
 		// https://cprfirstaid.com.au/courses/
 		// https://www.cbdcollegefirstaid.edu.au/
