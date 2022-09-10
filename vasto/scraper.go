@@ -1,12 +1,22 @@
 package vasto
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/chrisjoyce911/workshop-scrape/common"
+	"github.com/gocolly/colly"
 )
 
-func ScrapeWorkshops(org common.Job) ([]common.Location, error) {
+func ScrapeWorkshops(job common.Job) ([]common.Location, error) {
+
+	c := colly.NewCollector()
+
+	c.OnRequest(func(r *colly.Request) {
+		fmt.Println("Visiting", r.URL)
+	})
+
+	c.Visit(job.URL)
 
 	return []common.Location{
 		{
