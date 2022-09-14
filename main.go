@@ -38,10 +38,12 @@ func main() {
 		// A fiver order will be for a scraper for one of the following format types
 
 		// https://www.firstaidpro.com.au/calendar/
+		// https://firstaidcourseexperts.com.au/calendar/
 		// https://firstaidnoosa.info/dates/
 		// https://www.redcross.org.au/firstaid/courses/
 		// https://cprfirstaid.com.au/courses/
 		// https://www.cbdcollegefirstaid.edu.au/
+		// https://www.firstaidae.com.au/course-calendar/
 		// https://www.stjohnnsw.com.au/first-aid-training/
 		// https://www.stjohnvic.com.au/first-aid-training/first-aid-courses/
 		// https://www.stjohntas.org.au/course-information/
